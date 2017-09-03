@@ -46,7 +46,7 @@ status_t BnDumpTunnel::onTransact(uint32_t code, const Parcel& data, Parcel* rep
             reply->writeString8(result);
             reply->writeInt32(ret);
             return NO_ERROR;
-        } break;
+        }
     }
     return BBinder::onTransact(code, data, reply, flags);
 }
