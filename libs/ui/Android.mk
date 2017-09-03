@@ -48,6 +48,13 @@ LOCAL_SRC_FILES := \
 	Region.cpp \
 	UiConfig.cpp
 
+ifeq ($(BOARD_HAS_MTK_HARDWARE),true)
+LOCAL_SRC_FILES += \
+	mediatek/Fence.cpp \
+	mediatek/IDumpTunnel.cpp \
+	mediatek/RefBaseDump.cpp
+endif
+
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
 	libcutils \
