@@ -16,7 +16,11 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_CLANG := true
+ifneq  ($(BOARD_HAS_MTK_HARDWARE),true)
 LOCAL_CPPFLAGS := -std=c++1y -Weverything -Werror
+else
+LOCAL_CPPFLAGS := -std=c++1y -Weverything
+endif
 # LOCAL_SANITIZE := integer
 
 # The static constructors and destructors in this library have not been noted to
